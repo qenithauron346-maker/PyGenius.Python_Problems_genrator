@@ -1,0 +1,346 @@
+:root {
+    --bg-dark: #0a0a0c;
+    --bg-card: rgba(25, 25, 30, 0.7);
+    --accent: #00f2ff;
+    --accent-glow: rgba(0, 242, 255, 0.4);
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0aa;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.05);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background: var(--bg-dark);
+    color: var(--text-primary);
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-image:
+        radial-gradient(circle at 10% 20%, rgba(0, 242, 255, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(123, 31, 162, 0.05) 0%, transparent 40%);
+}
+
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+}
+
+h1,
+h2,
+h3 {
+    letter-spacing: -0.02em;
+}
+
+.glow-text {
+    text-shadow: 0 0 20px var(--accent-glow);
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: var(--transition);
+}
+
+.primary-btn {
+    background: var(--accent);
+    color: var(--bg-dark);
+    padding: 12px 28px;
+    border-radius: 12px;
+    font-weight: 600;
+    box-shadow: 0 4px 15px var(--accent-glow);
+}
+
+.primary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px var(--accent-glow);
+}
+
+.primary-btn:active {
+    transform: translateY(0);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--glass-border);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-secondary);
+}
+
+/* Layout & Layout Components */
+#app {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    min-height: 100vh;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    margin-bottom: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+.glass-btn {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    color: var(--text-primary);
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+.glass-btn:hover {
+    background: var(--glass-border);
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    max-width: 600px;
+}
+
+.controls {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.glass-input {
+    background: var(--bg-dark);
+    color: var(--text-primary);
+    border: 1px solid var(--glass-border);
+    padding: 12px 15px;
+    border-radius: 12px;
+    outline: none;
+}
+
+/* Mode Toggle */
+.mode-toggle {
+    display: flex;
+    padding: 5px;
+    margin-bottom: 25px;
+    gap: 5px;
+}
+
+.mode-btn {
+    padding: 8px 20px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    background: transparent;
+    color: var(--text-secondary);
+}
+
+.mode-btn.active {
+    background: var(--accent);
+    color: var(--bg-dark);
+    box-shadow: 0 0 15px var(--accent-glow);
+}
+
+.lucky-btn {
+    font-weight: 600;
+}
+
+.lucky-btn:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    box-shadow: 0 0 15px var(--accent-glow);
+}
+
+#solution-btn {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+    color: var(--accent);
+}
+
+/* Output Panel */
+.output-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+#code-output {
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.panel-header {
+    padding: 15px 25px;
+    border-bottom: 1px solid var(--glass-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.panel-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.panel-actions button {
+    background: none;
+    font-size: 1.2rem;
+}
+
+.code-wrapper {
+    padding: 25px;
+    flex-grow: 1;
+    background: #000;
+    margin: 15px;
+    border-radius: 12px;
+    overflow-x: auto;
+}
+
+pre code {
+    font-family: 'Fira Code', 'Courier New', monospace;
+    color: #d1d1d1;
+    line-height: 1.6;
+}
+
+/* Side Panels */
+aside {
+    position: fixed;
+    right: 20px;
+    top: 100px;
+    width: 320px;
+    max-height: calc(100vh - 150px);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.hidden {
+    display: none !important;
+}
+
+#task-list {
+    padding: 15px;
+    list-style: none;
+}
+
+#task-list li {
+    padding: 12px;
+    border-bottom: 1px solid var(--glass-border);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Toast */
+.toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent);
+    color: var(--bg-dark);
+    padding: 10px 24px;
+    border-radius: 30px;
+    font-weight: 600;
+    z-index: 1000;
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translate(-50%, 50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .controls {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .primary-btn,
+    .glass-input {
+        width: 100%;
+    }
+
+    aside {
+        width: calc(100vw - 40px);
+        left: 20px;
+        top: 100px;
+    }
+}

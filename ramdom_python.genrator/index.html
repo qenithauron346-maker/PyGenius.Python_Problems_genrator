@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PyGenius | Random Python Generator</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <nav class="glass-panel">
+                <div class="logo">
+                    <span class="icon">🐍</span>
+                    <span class="name glow-text">PyGenius</span>
+                </div>
+                <div class="nav-links">
+                    <button id="starred-btn" class="glass-btn">⭐ Starred</button>
+                    <button id="tasks-btn" class="glass-btn">📅 Daily Tasks</button>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero">
+                <h1 class="glow-text">Unlock Random Python Magic</h1>
+                <p>Generate useful scripts, project ideas, and learning challenges instantly.</p>
+                <div class="mode-toggle glass-panel">
+                    <button id="snippet-mode-btn" class="mode-btn active">Snippets</button>
+                    <button id="challenge-mode-btn" class="mode-btn">Challenges</button>
+                </div>
+
+                <div class="controls">
+                    <button id="generate-btn" class="primary-btn">Generate Magic ✨</button>
+                    <button id="lucky-btn" class="glass-btn lucky-btn">Lucky 🎲</button>
+                    <select id="category-select" class="glass-input">
+                        <option value="random">Everything</option>
+                        <option value="variables">Variables</option>
+                        <option value="strings">Strings</option>
+                        <option value="lists">Lists</option>
+                        <option value="conditions">Conditions</option>
+                        <option value="loops">Loops</option>
+                        <option value="data_structures">Data Structures</option>
+                        <option value="functions">Functions</option>
+                        <option value="file_handling">File Handling</option>
+                        <option value="error_handling">Error Handling</option>
+                        <option value="modules">Modules & Libraries</option>
+                        <option value="oop">OOP</option>
+                        <option value="projects">Intermediate Projects</option>
+                        <option value="utility">Useful Utilities</option>
+                        <option value="game">Mini Games</option>
+                        <option value="automation">Automation</option>
+                        <option value="data">Data Science</option>
+                    </select>
+                </div>
+            </section>
+
+            <section class="output-container">
+                <div id="code-output" class="glass-panel">
+                    <div class="panel-header">
+                        <span id="output-title">Welcome to PyGenius</span>
+                        <div class="panel-actions">
+                            <button id="solution-btn" class="glass-btn hidden">Show Solution</button>
+                            <button id="copy-btn" title="Copy Code">📋</button>
+                            <button id="star-code-btn" title="Star this">⭐</button>
+                        </div>
+                    </div>
+                    <div class="code-wrapper">
+                        <pre><code id="python-code"># Click "Generate Magic" to see some cool Python code!
+# Your next big project starts here.</code></pre>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <aside id="daily-tasks-panel" class="glass-panel hidden">
+            <div class="panel-header">
+                <h3>Daily Python Tasks</h3>
+                <button id="close-tasks" class="icon-btn">✕</button>
+            </div>
+            <ul id="task-list">
+                <!-- Tasks will be injected here -->
+            </ul>
+        </aside>
+
+        <footer>
+            <p>&copy; 2026 PyGenius - Your Premium Python Companion</p>
+        </footer>
+    </div>
+
+    <!-- Modals or Overlays -->
+    <div id="toast" class="toast hidden">Copied to clipboard!</div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
